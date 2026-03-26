@@ -2,15 +2,17 @@
 
 namespace App\Controllers;
 
-class AboutController
+use App\Core\Controller;
+
+class AboutController extends Controller
 {
      public function index()
      {
-          echo "About";
-     }
-
-     public function contact()
-     {
-          echo "Contact";
+          $this->render(
+               'about', 
+               [
+                    'title' => 'About'
+               ]
+          );
      }
 }
