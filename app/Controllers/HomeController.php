@@ -2,10 +2,18 @@
 
 namespace App\Controllers;
 
-class HomeController
+use App\Core\Controller;
+
+class HomeController extends Controller
 {
      public function index()
      {
-          echo "Hello World";
+          $this->render(
+               'home', 
+               [
+                    'title' => 'Home',
+                    'user' => 'John Doe'
+               ]
+          );
      }
 }
