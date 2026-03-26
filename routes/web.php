@@ -1,13 +1,18 @@
 <?php
 
+use App\Controllers;
 use App\Core\Router;
 use App\Core\RouterNotFoundException;
+
+use App\Core\Env;
+
+Env::load(__DIR__ . '/../.env');
 
 $router = new Router();
 
 $router
-->register('/', [App\Controllers\HomeController::class, 'index'])
-->register('/about', [App\Controllers\AboutController::class, 'index']);
+->register('/', [Controllers\HomeController::class, 'index'])
+->register('/about', [Controllers\AboutController::class, 'index']);
 
 
 try {
